@@ -41,6 +41,11 @@ var app = {
     let cellElement = document.createElement('div');
     cellElement.classList.add('cell');
 
+    // Si la case courante a les mêmes coordonnées (x ET y) que la variable targetCell
+    if (x === app.targetCell.x && y === app.targetCell.y) {
+      cellElement.classList.add('targetCell');
+    }
+
     return cellElement;
   },
 };
