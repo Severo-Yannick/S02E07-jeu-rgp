@@ -45,6 +45,14 @@ var app = {
     if (x === app.targetCell.x && y === app.targetCell.y) {
       cellElement.classList.add('targetCell');
     }
+    // Si la case courante a les mêmes coordonnées (x ET y) que la variable qui correspond au joueu
+    if (x === app.player.x && y === app.player.y) {
+      let playerElement = document.createElement('div');
+      playerElement.classList.add('player');
+      playerElement.classList.add(`player--${app.player.direction}`);
+
+      cellElement.appendChild(playerElement);
+    }
 
     return cellElement;
   },
