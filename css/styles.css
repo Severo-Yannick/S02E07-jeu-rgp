@@ -11,6 +11,22 @@ body {
   margin: 20px;
 } 
 
+.player--right {
+  transform: rotate(0deg);
+}
+
+.player--up {
+  transform: rotate(-90deg);
+}
+
+.player--down {
+  transform: rotate(90deg);
+}
+
+.player--left {
+  transform: rotate(180deg);
+}
+
 #board {
   display: flex;
   flex-direction: column;

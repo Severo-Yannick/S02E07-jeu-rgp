@@ -17,6 +17,7 @@ var app = {
   // Création de div et ajout au DOM
   drawBoard: () => {
     let boardElement = document.getElementById('board');
+    document.getElementById('player')
 
     for (let rowCount = 0; rowCount < 4; rowCount++) {
       let rowElement = app.createRow(rowCount);
@@ -60,11 +61,56 @@ var app = {
   clearBoard: () => {
     document.getElementById('board').innerHTML = '';
   },
-  // redrawBoard appelle clearBoard puis drawBoard
+  // redrawBoard appelle clearBoard(vide le contenu) puis drawBoard(met à jour la nouvelle valeur)
   redrawBoard: () => {
-    clearBoard();
-    drawBoard();
+    app.clearBoard();
+    app.drawBoard();
   },
+  // Tourner à gauche
+  turnLeft : () => {
+    switch(app.player.direction) {
+      case 'up':
+        app.player.direction = 'left';
+        break;
+
+      case 'left':
+        app.player.direction = 'down';
+        break;
+
+      case 'down':
+        app.player.direction = 'right';
+        break;
+
+      case 'right':
+        app.player.direction = 'up';
+        break;
+    } 
+
+    app.redrawBoard();
+  },
+  // Tourner à droite
+  turnRight : () => {
+    switch(app.player.direction) {
+      case 'up':
+        app.player.direction = 'right';
+        break;
+
+      case 'right':
+        app.player.direction = 'down';
+        break;
+
+      case 'down':
+        app.player.direction = 'left';
+        break;
+
+      case 'left':
+        app.player.direction = 'up';
+        break;
+    } 
+
+    app.redrawBoard();
+  },
+
 };
 
 document.addEventListener('DOMContentLoaded', app.init);
