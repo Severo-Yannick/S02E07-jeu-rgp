@@ -59,7 +59,12 @@ var app = {
   // Vide le contenu du board
   clearBoard: () => {
     document.getElementById('board').innerHTML = '';
-  }
+  },
+  // redrawBoard appelle clearBoard puis drawBoard
+  redrawBoard: () => {
+    clearBoard();
+    drawBoard();
+  },
 };
 
 document.addEventListener('DOMContentLoaded', app.init);
