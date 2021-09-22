@@ -56,7 +56,10 @@ var app = {
 
     return cellElement;
   },
+  // Vide le contenu du board
+  clearBoard: () => {
+    document.getElementById('board').innerHTML = '';
+  }
 };
-
 
 document.addEventListener('DOMContentLoaded', app.init);
