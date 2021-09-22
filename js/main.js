@@ -106,7 +106,37 @@ var app = {
       case 'left':
         app.player.direction = 'up';
         break;
-    } 
+    }
+
+    app.redrawBoard();
+  },
+  // Avancer dans la direction vers laquelle il est tourné
+  moveForward: () => {
+    switch(app.player.direction) {
+    case 'up':
+      if(app.player.y > 0) {
+        app.player.y--;
+      }
+      break;
+
+    case 'right':
+      if(app.player.x < 5) {
+        app.player.x++;
+      }
+      break;
+
+    case 'down':
+      if(app.player.y < 3) {
+        app.player.y++;
+      }
+      break;
+
+    case 'left':
+      if(app.player.x > 0) {
+        app.player.x--;
+      }
+    break;
+  } 
 
     app.redrawBoard();
   },
