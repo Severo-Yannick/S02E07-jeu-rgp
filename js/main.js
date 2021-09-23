@@ -92,6 +92,11 @@ var app = {
   },
   // Tourner à gauche
   turnLeft : () => {
+    // Si le jeu se termine
+    if(app.gameOver) {
+      return;
+    }
+
     switch(app.player.direction) {
       case 'up':
         app.player.direction = 'left';
@@ -114,6 +119,11 @@ var app = {
   },
   // Tourner à droite
   turnRight : () => {
+    // Si le jeu se termine
+    if(app.gameOver) {
+      return;
+    }
+
     switch(app.player.direction) {
       case 'up':
         app.player.direction = 'right';
@@ -136,6 +146,11 @@ var app = {
   },
   // Avancer dans la direction vers laquelle il est tourné
   moveForward: () => {
+    // Si le jeu se termine
+    if(app.gameOver) {
+      return;
+    }
+
     switch(app.player.direction) {
     case 'up':
       if(app.player.y > 0) {
