@@ -36,6 +36,8 @@ var app = {
     x: 5,
     y: 3,
   },
+  // Game over
+  gameOver: false,
   // Création de div et ajout au DOM
   drawBoard: () => {
     let boardElement = document.getElementById('board');
