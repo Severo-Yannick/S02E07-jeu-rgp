@@ -3,6 +3,10 @@ var app = {
     console.log('init !');
     app.drawBoard();
   },
+  // Ecoute des evenements clavier (pression sur les touches)
+  listenKeyboardEvents: () => {
+    document.addEventListener();
+  },
   // Position du joueur 
   player: {
     x: 0,
