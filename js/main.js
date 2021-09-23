@@ -1,6 +1,7 @@
 var app = {
   init: () => {
     console.log('init !');
+    app.listenKeyboardEvents();
     app.drawBoard();
   },
   // Ecoute des evenements clavier (pression sur les touches)
