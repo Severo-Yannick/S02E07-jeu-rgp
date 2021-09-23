@@ -47,6 +47,8 @@ var app = {
       let rowElement = app.createRow(rowCount);
       boardElement.appendChild(rowElement);
     }
+
+    app.isGameOver();
   },
   // Création de lignes
   createRow: (y) => {
