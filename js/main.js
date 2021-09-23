@@ -179,7 +179,13 @@ var app = {
 
     app.redrawBoard();
   },
-
+  // Partie gagneé
+  isGameOver: () => {
+    if(app.player.x === app.targetCell.x && app.player.y === app.targetCell.y) {
+      app.gameOver = true;
+      alert("Et c'est gagné ! 🎉");
+    }
+  }
 };
 
 document.addEventListener('DOMContentLoaded', app.init);
