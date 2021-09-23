@@ -5,7 +5,24 @@ var app = {
   },
   // Ecoute des evenements clavier (pression sur les touches)
   listenKeyboardEvents: () => {
-    document.addEventListener();
+    document.addEventListener(
+      "keyup", 
+        event => {
+          switch(event.code) {
+            case 'ArrowUp':
+              app.moveForward();
+              break;
+
+            case 'ArrowLeft':
+              app.turnLeft();
+              break;
+
+            case 'ArrowRight':
+              app.turnRight();
+              break;
+          }
+        }    
+    );
   },
   // Position du joueur 
   player: {
